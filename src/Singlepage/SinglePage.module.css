@@ -3,20 +3,22 @@
     margin-top: 100px;
     height: 1000px;
     width: 100%;
-    border:  3px solid red;
+    /* border:  3px solid red; */
     display: flex;
       justify-content: center;
       padding: 50px;
+
 }
 .singlepage_parent{
-    width: 70%;
-    height: 65%;
-    border:  3px solid blue;
+    width: 75%;
+    height: 55%;
+    border-radius: 10px;
+    /* border:  3px solid blue; */
     display: flex;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 .singlepage_img_div{
-    border:  3px solid brown;
+    /* border:  3px solid brown; */
 
   width: 40%;
   height: 100%;
@@ -28,7 +30,7 @@
   height: 100%;
 }
 .singlepage_details_div{
-    border:  3px solid black;
+    /* border:  3px solid black; */
 
   width: 60%;
   height: 100%;
@@ -36,7 +38,7 @@
 
 }
 .singlepage_heading{
-     border: 1px solid red;
+     /* border: 1px solid red; */
      height: 10%;
      font-size: 18px;
      color: black;
@@ -50,7 +52,7 @@
    
 }
 .singlepage_des{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
   color: rgb(66, 62, 62);
   font-size: 14px;
     height: 40%;
@@ -70,7 +72,7 @@
 
 }
 .singlepage_pieces_parent{
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
 
     height: 30%;
     width: 100%;
@@ -117,7 +119,7 @@
 }
 
 .singlepage_price_addbtn_div{
-    border: 1px solid black;
+    /* border: 1px solid black; */
 
     height: 20%;
     width: 100%;

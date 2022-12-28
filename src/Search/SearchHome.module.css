@@ -3,7 +3,7 @@
 
     height: fit-content;
     width: 100%;
-    border: 3px solid yellow;
+    /* border: 3px solid yellow; */
     padding-top:50px;
     padding-bottom: 100px;
     display: flex;
@@ -14,7 +14,7 @@
 }
 
 .search_heading {
-    border: 3px solid yellow;
+    /* border: 3px solid yellow; */
     width: 65%;
     margin: auto;
     display: flex;
@@ -36,7 +36,7 @@
     margin: auto;
     min-height: 100px;
     width: 65%;
-    border: 3px solid red;
+    /* border: 3px solid red; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -44,7 +44,7 @@
 }
 
 .search_single_div {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,7 +68,7 @@
 
 
 .single_prod_parent {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 80%;
     height: 100%;
     display: flex;
@@ -97,9 +97,9 @@
 
 }
 
-.price_btn_container>div {
+/* .price_btn_container>div {
     border: 1px solid red;
-}
+} */
 
 .cutprice {
     text-decoration: line-through;
