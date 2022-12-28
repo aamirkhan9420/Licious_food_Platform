@@ -1,7 +1,7 @@
 .Category_container {
     margin: auto;
 
-    border: 1px solid green;
+    /* border: 1px solid green; */
 
     height: 50%;
     display: flex;
@@ -17,7 +17,7 @@
     width: 80%;
     height: 10%;
 
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
 
@@ -40,7 +40,7 @@
 .Category_parent {
     margin: auto;
 
-    border: 1px solid green;
+    /* border: 1px solid green; */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
