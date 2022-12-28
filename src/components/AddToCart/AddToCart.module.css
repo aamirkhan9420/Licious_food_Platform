@@ -1,0 +1,305 @@
+*{
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.cart_icon_box{
+    display: flex;
+
+    justify-content: space-evenly;
+    align-items: baseline;
+    width: fit-content;
+
+    
+    
+}
+.cart_icon{
+    font-size: 30px;
+    color:black;
+    position: absolute;
+    display: inline-block;
+    cursor: pointer;
+}
+.badge{
+    position: relative;
+   top: -10px;
+   left: 53px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    background: #D11243;
+    color: white;
+   font-size: 10px;
+ 
+}
+.cart_icon_box>h2{
+    margin-left: 55px;
+}
+
+.closebtn{
+    border: 1px solid white;
+    color: white;
+    border-radius: 50% !important;
+    position: absolute;
+    left: -50px;
+    
+    font-size: 20px !important;
+}
+.heading_div{
+    height: 15%;
+    width: 100%;
+    /* border:  1px solid blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   margin-top: 20px;
+  
+
+
+}
+.heading_div>h1{
+    font-size: 25px;
+    font-weight: 600;
+}
+.heading_div>h2{
+    font-size: 16px;
+    background-color: #417505;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+.cart_parent{
+    width:  100%;
+    height: auto;
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap:5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.cart_parent>div{
+    /* border: 2px solid brown; */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.single_proddetail_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+
+}
+.single_proddetail_div>div{
+    /* border:  2px solid yellow; */
+    height: 50%;
+    
+
+}
+.name_no_cut_div{
+    /* border:  2px solid brown; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+    padding-left: 5px;
+      
+}
+.name_no_cut_div>h2{
+   
+    font-size: 14px;
+   font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 5px;
+    /* border:  1px solid green; */
+}
+.name_no_cut_div>h2>span{
+    background-color: rgb(236, 232, 232);
+    font-size: 14px;
+}
+.single_Prod_div_cross_icon{
+    font-size: 20px;
+    color: gray;
+    cursor: pointer;
+}
+
+.weight_price_btn_parent{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    padding-left: 30px;
+    
+}
+.weight_price_btn_maindiv{
+    width: 100%;
+    height: 70%;
+    /* border:  1px solid black; */
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding-right: 12px;
+}
+.weight_price_btn_maindiv>div:first-child{
+    width: 30%;
+    /* border: 1px solid green; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.weight_price_btn_maindiv>div:first-child>h2{
+    /* border: 1px solid gray; */
+    border-radius: 5px;
+    padding: 5px;
+}
+.weight_price_btn_maindiv>div:first-child>h3{
+   color: #D11243;
+   font-weight: 600;
+}
+
+/* .add_remove_btn_div.add_remove_btn_div .add_remove_btn_div .add_remove_btn_div */
+.add_remove_btn_div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+    gap: 10px;
+  }
+  .add_remove_btn_div>h1{
+     font-size: 16px;
+     font-weight: 500;
+     color: black;
+  }
+  .add_remove_btn_div>button:first-child{
+   
+    /* font-size: 40px; */
+     font-weight: 600;
+     color: #D11243;
+     background-color: rgb(236, 232, 232);
+     font-size: 16px;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+     
+  }
+  .add_remove_btn_div>button:last-child{
+   
+    font-weight: 600;
+    color: #D11243;
+    background-color: rgb(236, 232, 232);
+    font-size: 16px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 50px;
+
+ display: flex;
+ align-items: center;
+ justify-content: center;
+  
+  
+  }
+  /* .add_remove_btn_div .add_remove_btn_div. END add_remove_btn_div .add_remove_btn_div */
+
+
+
+  /*   .bill_parent   .bill_parent   .bill_parent */
+  .bill_parent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    /* border: 1px dashed black; */
+    gap: 5px;
+
+  }
+  .bill_parent>h1{
+    margin-left: -285px;
+    font-weight: 600;
+    color: black;
+    font-size: 18px;
+  }
+  .bill_parent>div:last-child>h1{
+    
+    font-weight: 600;
+    color: black;
+  }
+  .bill_parent>div:last-child>h2{
+    
+    font-weight: 600;
+    color: #D11243;
+  }
+  .bill_parent>div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   width: 100%;
+ 
+    border: 1px solid black;
+    padding: 5px;
+
+  }
+
+  .proceedtopay_parent{
+    margin: auto;
+    width: 100%;
+    height: 10%;
+     /* border: 1px solid  red; */
+     border-radius: 10px;
+     position: sticky;
+     bottom: 10px;
+     z-index: 700;
+     background-color: white;
+     display: flex;
+     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+     margin-top: 10px;
+  }
+  .proceedtopay_parent>div:first-child{
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+   position: relative;
+  }
+  .proceedtopay_parent>div:first-child>h2{
+    font-size: 18px;
+    color: black;
+    font-weight: 600;
+  }
+  .proceedtopay_parent>div:first-child>h3{
+    font-size: 18px;
+    color: black;
+    font-weight: 600;
+  }
+  .infoIcon{
+    color: #D11243;
+    
+  }
+  .proceedtopay_parent>div:last-child{
+    width: 55%;
+    height: 100%;
+    /* border: 1px solid black; */
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+      position: absolute;
+      right: 3px;
+
+  }
+  .proceedtopay_parent>div:last-child>button{
+    width: 100%;
+    height: 100%;
+    
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #D11243;
+    color: white;
+  font-weight: 600;
+  font-size: 18px;
+
+  }

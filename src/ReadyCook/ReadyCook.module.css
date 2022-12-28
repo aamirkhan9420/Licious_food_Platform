@@ -1,0 +1,177 @@
+.fish_container{
+  width:  100%;
+  height:auto;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  background-color: #F7F6F6;
+
+}
+.fish_filter_nav{
+width: 100%;
+height: 10%;
+border: 3px solid green;
+
+}
+.fish_main_parent{
+  width: 100%;
+  height: 80%;
+  border: 3px solid black;
+  display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.fish_parent_grid_div{
+ 
+      width: 80%;
+      height: 80%;
+      border: 3px solid black;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      grid-template-rows: repeat(auto);
+      gap: 20px;
+}
+.fish_parent_grid_div>div{
+  border: 3px solid brown;
+}
+.single_div{
+  min-width: 32%;
+  height: auto;
+   padding: 10px;
+  scroll-snap-align: center;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  border-radius: 10px;
+
+}
+.single_divimg{
+width: 100%;
+height: 55%;
+border-top-left-radius:10px ;
+ border-top-right-radius: 10px;
+
+}
+.prod_detail{
+
+display: flex;
+flex-direction: column;
+gap: 5px;
+padding: 10px;
+justify-content: left;
+max-height:50%;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis
+}
+.prod_detail>h2{
+font-weight: 600;
+font-size: 20px;
+color: rgb(24, 21, 21);
+
+}
+/* link  link  link link */
+.link:hover{
+text-decoration: none !important;
+color:  black;
+}
+.link>h2{
+font-weight: 600;
+font-size: 20px;
+color: rgb(24, 21, 21);
+
+}
+/* link  link  link link */
+
+.prod_detail>p{
+color: gray;
+font-size: 14px;
+
+}
+.prod_price_btn_div{
+text-decoration: none;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 2px;
+}
+
+.prod_price_btn_div>h1{
+color: #D11243 ;
+font-weight: 600;
+text-decoration: none;
+}
+.prod_price_btn_div>button{
+background-color: #D11243;
+color: white;
+padding: 10px;
+border-radius: 5px;
+
+}
+.prv_btn,.nxt_btn{
+
+width: 60px;
+height: 100%;
+border: none;
+position: absolute;
+top: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: rgba(3, 3, 3, 0);
+}
+.nxt_btn{
+
+right: 90px;
+
+}
+.prv_btn{
+
+left: 90px;
+
+}
+.prv_btn p,.nxt_btn p{
+font-size: 50px;
+background-color: rgba(248, 248, 248, 0);
+box-shadow: 0px 0px 10px 0px rgb(5, 5, 5);
+border-radius: 10px;
+color: rgb(19, 18, 18);
+width: 50px;
+height: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/* .add_remove_btn_div.add_remove_btn_div .add_remove_btn_div .add_remove_btn_div */
+.add_remove_btn_div{
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 40%;
+}
+.add_remove_btn_div>h1{
+ font-size: 25px;
+ font-weight: 500;
+}
+.add_remove_btn_div>button:first-child{
+
+font-size: 45px;
+ font-weight: 600;
+ color: #D11243;
+ 
+}
+.add_remove_btn_div>button:last-child{
+
+font-size: 35px;
+font-weight: 600;
+color: #D11243;
+
+
+}
+/* .add_remove_btn_div .add_remove_btn_div. END add_remove_btn_div .add_remove_btn_div */
+.prod_price_btn_div>h1{
+  color: #D11243;
+  font-weight: 600;
+}

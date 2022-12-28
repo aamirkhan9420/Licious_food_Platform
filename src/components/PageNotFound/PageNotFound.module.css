@@ -1,0 +1,30 @@
+.PageNotFound_container{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 100%;
+
+}
+.PageNotFound_parent{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   width: 30%;
+   height: 70%;
+  
+}
+.PageNotFound_parent>img{
+    width: 100%;
+    height: 50%;
+}
+.PageNotFound_parent>div{
+    color: black;
+    font-weight: 600;
+}
+.backtoHome{
+    color: #039BE5;
+}

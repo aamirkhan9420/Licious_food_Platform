@@ -1,0 +1,28 @@
+.BestSeller_container{
+    margin: auto;
+
+    border: 5px solid brown;
+   
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+     /* overflow: hidden; */
+     gap: 10px;
+}
+.bestseller_heading{
+    width: 80%;
+    height: 10%;
+    
+    border: 1px solid red;
+    display: flex;
+
+}
+.bestseller_heading{
+    font-weight: 700;
+    font-size: 25px;
+    color: rgb(24, 21, 21);
+
+}

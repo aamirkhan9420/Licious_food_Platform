@@ -1,0 +1,40 @@
+.form_container{
+    margin:auto;
+    margin-top:0px;
+    height:750px;
+    width: 100%;
+    border: 5px solid blue;
+    padding: 50px;
+
+}
+.from_parent{
+    margin:auto;
+    
+    height: 100%;
+    width: 35%;
+    border: 1px solid red; 
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.btn{
+    margin: auto;
+    margin-top: 25px;
+    width: 100%;
+    padding: 25px;
+    font-size: 20px !important;
+
+
+}
+.spn{
+    color: #D11243
+}
+.confbtn{
+    background-color: #D11243 !important; 
+    color: white;
+}

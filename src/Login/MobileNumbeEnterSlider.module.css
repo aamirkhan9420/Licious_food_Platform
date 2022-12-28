@@ -1,0 +1,134 @@
+.drawer{
+    background-image: url("https://m.licious.in/image/rebranding/jpg/user-login-new.jpg");
+}
+.login_box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+
+  gap: 5px;
+}
+.login_box:hover{
+    cursor: pointer;
+}
+.login_img{
+ 
+  font-size: 25px;
+}
+.login_box>h2{
+    font-size: 16px;
+}
+.input_container{
+    width: 90%;
+    margin: auto;
+    height: 55%;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 20px;
+}
+.input_container>h1{
+    font-size: 20px;
+    font-weight: 600;
+}
+.closebtn{
+    font-size: 25px !important;
+  
+    color: white;
+}
+.inputField_proceedbtn{
+    width: 100%;
+    /* min-height: 40%; */
+    height: auto;
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.inp{
+    height: 45%;
+    
+    border-radius: none !important;
+    border-top-style: hidden !important;
+    border-right-style: hidden !important;
+    border-left-style: hidden !important;
+    border-bottom: 1px solid gray !important;
+    border-width: 80%;
+    background-color: #eee;
+    display: flex !important;
+    align-items: center !important;
+
+}
+.inp:focus{
+ 
+    outline: none !important;
+}
+.inputField_proceedbtn>button{
+    width: 100%;
+    min-height: 30%;
+   max-height: 60%;
+    font-size: 20px;
+    color: white;
+
+    background-color:#D11243;
+
+}
+.textred{
+    color: #D11243;
+}
+.otpinfo{
+   border: 2px solid green;
+
+   color: green;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding:10px;
+   height: 45%;
+
+}
+.otpinvalid{
+    border: 2px solid #D11243;
+
+   color: #D11243;
+   background-color: #ffe4eb;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding:10px;
+   height: 45%;
+}
+
+.inprightelement{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    font-size: 14px !important;
+    margin-right: 5px!important;
+    color: #D11243;
+}
+.profileOptionsImg{
+    margin: auto;
+   
+}
+.profileOptionsImg>img{
+ height: 80px;
+ width: 230px;
+   
+}
+.profileOptions{
+    margin: auto;
+    width:85% !important;
+    border-bottom: 1px solid rgb(213, 213, 213);
+    border-style: 50px !important;
+    font-weight: 600;
+  
+}
