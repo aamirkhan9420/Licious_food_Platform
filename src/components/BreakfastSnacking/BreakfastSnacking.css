@@ -1,7 +1,7 @@
 .BestSeller_container{
     margin: auto;
 
-    border: 5px solid brown;
+    /* border: 5px solid brown; */
    
     height: 600px;
     display: flex;
@@ -16,7 +16,7 @@
     width: 80%;
     height: 10%;
     
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
 
 }
