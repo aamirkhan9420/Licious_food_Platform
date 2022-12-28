@@ -83,7 +83,7 @@
     color: #D11243;
 }
 .otpinfo{
-   border: 2px solid green;
+   /* border: 2px solid green; */
 
    color: green;
    width: 100%;
@@ -95,7 +95,7 @@
 
 }
 .otpinvalid{
-    border: 2px solid #D11243;
+    /* border: 2px solid #D11243; */
 
    color: #D11243;
    background-color: #ffe4eb;
