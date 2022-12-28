@@ -3,7 +3,7 @@
     margin-top:0px;
     height:750px;
     width: 100%;
-    border: 5px solid blue;
+    /* border: 5px solid blue; */
     padding: 50px;
 
 }
@@ -12,7 +12,7 @@
     
     height: 100%;
     width: 35%;
-    border: 1px solid red; 
+    /* border: 1px solid red;  */
     padding: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

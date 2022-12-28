@@ -1,3 +1,4 @@
+import { Spinner } from '@chakra-ui/react'
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
@@ -12,6 +13,9 @@ export default function Chicken({ handleQuantityIncreament, handleQuantityDecrea
 
     let foodData = useSelector((state) => {
         return state.AppReducer.foodData
+    })
+    let isLoading = useSelector((state) => {
+        return state.AppReducer.isLoading
     })
     let cartData = useSelector((state) => {
         return state.AppReducer.cartData
@@ -90,6 +94,23 @@ export default function Chicken({ handleQuantityIncreament, handleQuantityDecrea
         fishFunction()
        
     }, [dispatch, cartGet,foodData.length])
+
+    if(isLoading){
+        return<Spinner
+        thickness='4px'
+        speed='0.65s'
+        emptyColor='gray.200'
+        color='blue.500'
+        size='xl'
+        position={"fixed"}
+        left={"50%"}
+        right={"50%"}
+        top={"50%"}
+        bottom={"50%"}  
+        zIndex="1"
+
+      />
+     }
   
     return (
         <div className={style.fish_container}>

@@ -21,7 +21,7 @@ export default function Search({setText}) {
   return (
     <div className={style.searchInput_div}><Link to={"/SearchHome"}>
         <InputGroup   >
-                <InputRightElement pointerEvents='none' children={<FcSearch color='red.600' font-size="20px" />}/>
+                <InputRightElement pointerEvents='none' children={<FcSearch color='red.600' fontSize="20px" />}/>
                   
                 <Input className={style.inputseacrh}  focusBorderColor='none'  type='text' placeholder='Search for any delicious product' value={searchdata} onChange={(e)=>handleInput(e)}/>
                 
