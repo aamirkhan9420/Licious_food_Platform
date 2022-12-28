@@ -36,15 +36,7 @@
     display: flex;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    /* -webkit-justify-content: center; */
-    /* justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center; */
-    /* -webkit-align-items: center; */
-   
-  
-   
-    flex-direction: column;
+       flex-direction: column;
 
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 10px;
