@@ -12,7 +12,9 @@ ul {
 td{
     font-size: smaller;
 }
-
+.row{
+  padding: 20px;
+}
 /* footer css */
 
 span{
