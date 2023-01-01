@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+<h1 fontsize="30px">Licious.com</h1>
+Licious is the ultimate destination to buy premium and high-quality fresh seafood and meat online. It’s a one-stop online meat shop for fresh meat, chicken, fish, eggs, mutton & seafood delivery. 
+<h1>Features</h1>
+<li>Search food by category</li>
+<li>User Signup and Login</li>
+<li>Add to Cart</li> 
+<li>Fliter by type of food</li> 
+<a href="https://my-licious.vercel.app/">Live deployed link</a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+![Screenshot (2116)](https://user-images.githubusercontent.com/101388992/210178674-ad32af25-f2a2-440d-b4e5-c3ccc3e9b3d7.png)
 
-### `npm start`
+![Screenshot (2117)](https://user-images.githubusercontent.com/101388992/210178680-063866b2-438d-4f1d-bd99-ba1a70f67564.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Screenshot (2118)](https://user-images.githubusercontent.com/101388992/210178685-23dbd668-6eac-453c-bab8-915c8805e41a.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Screenshot (2128)](https://user-images.githubusercontent.com/101388992/210178688-f57d9461-2f73-4b41-8c95-9148ace7f2bf.png)
 
-### `npm test`
+![Screenshot (2129)](https://user-images.githubusercontent.com/101388992/210178711-c7e3993b-bc01-46ec-85ee-4822bdc885cb.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Screenshot (2130)](https://user-images.githubusercontent.com/101388992/210178715-fb7a33c5-50e7-4ab2-a10e-d1c3077b65a2.png)
 
-### `npm run build`
+![Screenshot (2131)](https://user-images.githubusercontent.com/101388992/210178718-7d0b2606-da77-44fc-b3d7-9f2ebdbffb69.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Screenshot (2132)](https://user-images.githubusercontent.com/101388992/210178726-c6b0675d-8fb1-4c0b-a4a9-1b2b1b2ca43f.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![Screenshot (2133)](https://user-images.githubusercontent.com/101388992/210178738-954caf86-bd77-4be8-a309-60b8b4bc27b8.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+ <h2>Tech Stack</h2>
+- React.js
+- Redux
+- JavaScript
+- Chakra
+- React icons
+- Css3
+<h1>Author</h1> 
+<li>Aamir Khan</li>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
