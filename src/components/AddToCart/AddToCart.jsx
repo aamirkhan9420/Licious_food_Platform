@@ -1,27 +1,28 @@
 
-import { Box, Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader, DrawerOverlay, Input, useDisclosure, useToast } from '@chakra-ui/react'
-import styled from '@emotion/styled';
+import { Box, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerOverlay, useDisclosure, useToast } from '@chakra-ui/react'
+
 import React from 'react'
 import { useEffect } from 'react';
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import style from "./AddToCart.module.css"
 import { HiOutlineX } from "react-icons/hi";
-import { cartDelete, cartGet, getData } from '../../redux/AppReducer/action';
-import { useState } from 'react';
+
+
 import { AiOutlineInfoCircle } from "react-icons/ai";
-import { Link, useNavigate } from 'react-router-dom';
-export default function AddToCart({locality, subtotal, deliverycharge, discount, totalBill, cuurency, handleBillforDecreament, handleBillforIncreament, handleDeletecard, handleQuantityIncreament, handleQuantityDecreament }) {
+import { useNavigate } from 'react-router-dom';
+
+export default function AddToCart({ locality, subtotal, deliverycharge, discount, totalBill, handleBillforIncreament, handleDeletecard, handleQuantityIncreament, handleQuantityDecreament }) {
 
   let cartData = useSelector((state) => {
     return state.AppReducer.cartData
   })
-  
- 
+
+
   let navigator = useNavigate()
   const handleSlider = () => {
     onClose()
-    navigator("/paymentpage",{state:{locality}})
+    navigator("/paymentpage", { state: { locality } })
   }
 
 
@@ -54,8 +55,9 @@ export default function AddToCart({locality, subtotal, deliverycharge, discount,
 
       })
       onClose()
-     
+
     }
+
     else {
       onOpen()
     }
@@ -65,10 +67,10 @@ export default function AddToCart({locality, subtotal, deliverycharge, discount,
   // console.log(subtotal);
   const firstField = React.useRef()
 
-  useEffect(()=>{
+  useEffect(() => {
     handleBillforIncreament()
-  
-  },[cartData])
+
+  }, [cartData])
 
   return (
     <>
@@ -88,14 +90,14 @@ export default function AddToCart({locality, subtotal, deliverycharge, discount,
 
       >
         <DrawerOverlay />
-       {total>0&& <DrawerContent>
+        {total > 0 && <DrawerContent>
 
 
           <DrawerBody >
             <DrawerCloseButton className={style.closebtn} />
             <div className={style.heading_div}>
               <h1>Order Summary</h1>
-              <h2>{totalBill<399?"Your cart value is less than ₹399 & delivery charge applies":"Congratulation Your delivery charge is waived off!!!"}</h2>
+              <h2>{totalBill < 399 ? "Your cart value is less than ₹399 & delivery charge applies" : "Congratulation Your delivery charge is waived off!!!"}</h2>
             </div>
             <div className={style.cart_parent}>
 

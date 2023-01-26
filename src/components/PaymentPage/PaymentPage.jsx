@@ -7,38 +7,59 @@ import { useprofilefunc } from '../../redux/AppReducer/action'
 import style from "./PaymentPage.module.css"
 export default function PaymentPage() {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  let navigate=useNavigate()
+  let navigate = useNavigate()
   let location = useLocation()
   // let  loca=location.state.locality
 
-  let [loc,setLocation]=useState()
+  let [loc, setLocation] = useState()
   let [flat, setFlat] = useState()
   let [landMark, setLandMark] = useState()
   let [city, setCity] = useState()
   let [email, setEmail] = useState()
   let [mobile, setMobile] = useState()
   let [fullname, setFullName] = useState()
-  let [adress,setAdrres]=useState()
-  let dispatch=useDispatch()
-  const toast=useToast()
-  let handleForm = (e) => {  
-      e.preventDefault()
-        let arr=[loc,flat,landMark,city,email,mobile,fullname]
-   setAdrres(arr)
+  let [adress, setAdrres] = useState()
+  let dispatch = useDispatch()
+  const toast = useToast()
+  let handleForm = (e) => {
+    e.preventDefault()
+    if (mobile.length < 10 || mobile > 10) {
+      toast({
+        title: 'Mobile number should be 10 digits',
+        status: 'warning',
+        duration: 9000,
+        isClosable: true,
+        position: "top"
+      })
+      // return
+    }
+    if (loc && flat && landMark && city && email && mobile && fullname) {
+      let arr = [loc, flat, landMark, city, email, mobile, fullname]
+      setAdrres(arr)
       onOpen()
+    } else {
+      toast({
+        title: 'All fields are mandatory',
+        status: 'warning',
+        duration: 9000,
+        isClosable: true,
+        position: "top"
+      })
+    }
+
   }
- const hadleuserpfile=()=>{
-  
-  useprofilefunc(dispatch,adress)
-  onClose()
-  toast({
-    title: 'User details added',
+  const hadleuserpfile = () => {
+
+    useprofilefunc(dispatch, adress)
+    onClose()
+    toast({
+      title: 'User details added',
       status: 'success',
-    duration: 9000,
-    isClosable: true,
-    position: "top"
-  })
-  navigate("/Payment")
+      duration: 9000,
+      isClosable: true,
+      position: "top"
+    })
+    navigate("/Payment")
   }
   return (
     <div className={style.form_container}>
@@ -46,7 +67,7 @@ export default function PaymentPage() {
         <form action="" onSubmit={handleForm}>
           <FormControl className={style.form}>
             <FormLabel >Enter Location</FormLabel>
-            <Select placeholder='Select Your Location' onChange={(e)=>setLocation(e.target.value)}>
+            <Select placeholder='Select Your Location' onChange={(e) => setLocation(e.target.value)}>
               <option value="Maharashtra">Maharashtra</option>
               <option value="TamilNadu">TamilNadu</option>
               <option value="Gujrat">Gujrat</option>
@@ -75,63 +96,51 @@ export default function PaymentPage() {
           </FormControl>
         </form>
       </div>
-     
- 
+      <>
+        <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>Address</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>
+              <Text fontWeight='bold' mb='1rem' color={"black"}>
+                <span className={style.spn}>location:</span>  {loc}
+              </Text>
+              <Text fontWeight='bold' mb='1rem'>
 
- 
-    <>
-      {/* <Button onClick={onOpen}>Open Modal</Button> */}
+                <span className={style.spn}>Flat number/Buliding number/Street Name:</span>  {flat}
 
-      <Modal blockScrollOnMount={false} isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Address</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <Text fontWeight='bold' mb='1rem'color={"black"}>
-            <span className={style.spn}>location:</span>  {loc}
-            </Text>
-            <Text fontWeight='bold' mb='1rem'>
-               
-            <span className={style.spn}>Flat number/Buliding number/Street Name:</span>  {flat}
+              </Text>
+              <Text fontWeight='bold' mb='1rem'>
+                <span className={style.spn}>Landmark: </span>{landMark}
 
-            </Text>
-            <Text fontWeight='bold' mb='1rem'>
-            <span className={style.spn}>Landmark: </span>{landMark}
-         
-            </Text>
-            <Text fontWeight='bold' mb='1rem'>
-            <span className={style.spn}>City:</span>{city}
-            
-           
-            </Text>
-            <Text fontWeight='bold' mb='1rem'>
-           
-            <span className={style.spn}> Email:</span> {email}
+              </Text>
+              <Text fontWeight='bold' mb='1rem'>
+                <span className={style.spn}>City:</span>{city}
 
-            </Text>
-            <Text fontWeight='bold' mb='1rem'>
-            <span className={style.spn}> Mobile number:</span> {mobile}
 
-            
-            </Text>
-            <Text fontWeight='bold' mb='1rem'>
-            <span className={style.spn}> Full Name:</span>  {fullname}
+              </Text>
+              <Text fontWeight='bold' mb='1rem'>
+                <span className={style.spn}> Email:</span> {email}
+              </Text>
+              <Text fontWeight='bold' mb='1rem'>
+                <span className={style.spn}> Mobile number:</span> {mobile}
+              </Text>
+              <Text fontWeight='bold' mb='1rem'>
+                <span className={style.spn}> Full Name:</span>  {fullname}
+              </Text>
+            </ModalBody>
 
-          
-            </Text>
-          </ModalBody>
+            <ModalFooter>
+              <Button colorScheme='blue' mr={3} onClick={onClose}>
+                Close
+              </Button>
+              <Button className={style.confbtn} onClick={() => hadleuserpfile()}>Confirm user details & proceed to pay</Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+      </>
 
-          <ModalFooter>
-            <Button colorScheme='blue' mr={3} onClick={onClose}>
-              Close
-            </Button>
-            <Button  className={style.confbtn} onClick={()=>hadleuserpfile()}>Confirm user details & proceed to pay</Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
-    </>
-  
     </div>
   )
 }

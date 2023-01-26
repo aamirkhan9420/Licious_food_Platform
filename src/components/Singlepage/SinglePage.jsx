@@ -4,24 +4,21 @@ import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import style from "./SinglePage.module.css"
-export default function SinglePage({handleQuantityIncreament, handleQuantityDecreament, handlePost }) {
+export default function SinglePage({ handleQuantityIncreament, handleQuantityDecreament, handlePost }) {
    let [productData, setData] = useState()
    let location = useLocation()
    console.log(location.state)
    let cartData = useSelector((state) => {
       return state.AppReducer.cartData
-  })
+   })
    let checkQuantity = (el) => {
       let ans = cartData.length > 0 && cartData.map((item) => {
-
-
-          if (item.id === el.id) {
-
-              return item.quantity
-          }
+         if (item.id === el.id) {
+            return item.quantity
+         }
       })
       return ans
-  }
+   }
    useEffect(() => {
       setData(location.state)
    }, [])
@@ -59,7 +56,7 @@ export default function SinglePage({handleQuantityIncreament, handleQuantityDecr
                      <h1>{productData.cuurency}{productData.price}</h1>
                      <h3>{productData.price_tag}<span className={style.cutprice}>{productData.cuurency} {productData.strikePrice}</span></h3>
                      <h2>{productData.off}{productData.off_tag}</h2>
-                      {cartData.length > 0 && cartData.find(({ id }) => id === productData.id) !== undefined ?
+                     {cartData.length > 0 && cartData.find(({ id }) => id === productData.id) !== undefined ?
                         <div className={style.add_remove_btn_div}><button onClick={() => handleQuantityDecreament(productData.id)}>-</button><h1>{checkQuantity(productData)}</h1><button onClick={() => handleQuantityIncreament(productData.id)}>+</button></div>
                         : <button className={style.mainbtn} onClick={() => handlePost(productData)}>ADD TO CART</button>}
                   </div>

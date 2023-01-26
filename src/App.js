@@ -1,53 +1,70 @@
 
+import { useDisclosure, useToast } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import {  useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer/Footer';
-import Home from './components/Home/Home';
 import Navbar from './components/navbar/Navbar';
 import AllRoutes from './components/routes/AllRoutes';
 import { cartDelete, cartGet, cartPatchQuantiy, cartPost } from './redux/AppReducer/action';
 
 function App() {
+
   let [text, setText] = useState()
-let location=useLocation()
-console.log(location.state)
-let locationstate=location.state
+  let location = useLocation()
+  // console.log(location.state)
+  let locationstate = location.state
 
   let [subtotal, setSubtotal] = useState(0)
   let [deliverycharge, setDeliveryCharge] = useState(0)
   let [discount, setDiscount] = useState(0)
   let [totalBill, setTotalBill] = useState(0)
   let [cuurency, setCurrency] = useState("")
-  
+  let toast = useToast()
 
   let cartData = useSelector((state) => {
     return state.AppReducer.cartData
+  })
+  let userData = useSelector((state) => {
+    return state.AuthReducer.userData
   })
   let dispatch = useDispatch()
   const handleGetCart = () => {
     cartGet(dispatch)
   }
-
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
   const handlePost = (el) => {
-   console.log("hello")
-    cartPost(el).then((res)=>{
-   
-       cartGet(dispatch)
-    
+
+    if (userData.length == 0) {
+
+      toast({
+        title: 'Please Login first.',
+
+        status: 'warning',
+        duration: 9000,
+        isClosable: true,
+        position: 'top',
+      })
+      return
+
+    }
+    cartPost(el).then((res) => {
+
+      cartGet(dispatch)
+
       let count = JSON.parse(localStorage.getItem("total")) || 0
 
       count = count + 1
       localStorage.setItem("total", JSON.stringify(count))
-    }).catch((e)=>{
+    }).catch((e) => {
       console.log(e)
     })
 
-   
 
-    
+
+
 
   }
 
@@ -56,18 +73,18 @@ let locationstate=location.state
 
     cartDelete(id).then((res) => {
 
-      if (count>0) {
+      if (count > 0) {
         count = count - 1
         localStorage.setItem("total", JSON.stringify(count))
-      handleBillforDecreament()
-      handleGetCart()
+        handleBillforDecreament()
+        handleGetCart()
       }
-      else{
-           localStorage.setItem("total", JSON.stringify(0))
-      handleBillforDecreament()
-      handleGetCart()
+      else {
+        localStorage.setItem("total", JSON.stringify(0))
+        handleBillforDecreament()
+        handleGetCart()
       }
-   
+
 
 
     }).catch((e) => {
@@ -77,24 +94,24 @@ let locationstate=location.state
   }
 
 
- 
+
   const handleBillforIncreament = () => {
 
-console.log(cartData)
+    // console.log(cartData)
 
-    let s=0
- for(let i=0;i<cartData.length;i++){
-    
-     s+=Number(cartData[i].price)*Number(cartData[i].quantity)
- }
- console.log(s)
- setSubtotal(s)
+    let s = 0
+    for (let i = 0; i < cartData.length; i++) {
+
+      s += Number(cartData[i].price) * Number(cartData[i].quantity)
+    }
+    //  console.log(s)
+    setSubtotal(s)
     if (s < 399) {
       setDeliveryCharge(39)
       setDiscount(0)
-     
-        
-      setTotalBill(s+ 39)
+
+
+      setTotalBill(s + 39)
 
     }
     else {
@@ -105,7 +122,7 @@ console.log(cartData)
 
 
     }
-   
+
 
   }
 
@@ -152,8 +169,8 @@ console.log(cartData)
   const handleQuantityIncreament = (id) => {
     console.log("helo")
     let count = JSON.parse(localStorage.getItem("total")) || 0
-    
-cartData.map((item) => {
+
+    cartData.map((item) => {
       if (item.id === id) {
         console.log(typeof item.quantity)
         cartPatchQuantiy(item.quantity + 1, id)
@@ -201,19 +218,18 @@ cartData.map((item) => {
   useEffect(() => {
 
     handleGetCart()
-   
-     }, [dispatch])
+
+  }, [dispatch])
 
 
   return (
     <div className="App">
-      <Navbar   setText={setText} locationstate={locationstate} subtotal={subtotal} deliverycharge={deliverycharge} discount={discount} totalBill={totalBill} cuurency={cuurency}
+      <Navbar setText={setText} locationstate={locationstate} subtotal={subtotal} deliverycharge={deliverycharge} discount={discount} totalBill={totalBill} cuurency={cuurency}
         handleBillforDecreament={handleBillforDecreament} handleBillforIncreament={handleBillforIncreament} handleDeletecard={handleDeletecard} handleQuantityIncreament={handleQuantityIncreament} handleQuantityDecreament={handleQuantityDecreament} />
       {/* <Home /> */}
 
-      <AllRoutes  text={text} handleQuantityIncreament={handleQuantityIncreament} handleQuantityDecreament={handleQuantityDecreament} handlePost={handlePost} />
-      <Footer />
-    </div>
+      <AllRoutes text={text} handleQuantityIncreament={handleQuantityIncreament} handleQuantityDecreament={handleQuantityDecreament} handlePost={handlePost} />
+      <Footer />  </div>
   );
 }
 

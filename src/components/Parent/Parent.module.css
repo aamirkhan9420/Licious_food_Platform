@@ -1,36 +1,84 @@
-.carousel {
-  position: relative;
-  overflow-x: hidden;
-  /* padding: 26px; */
+.fish_container {
   width: 100%;
-  /* border: 3px solid yellow; */
-  height: 80%;
+  height: auto;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: 10px; */
+  background-color: #F7F6F6;
+  padding: 20px;
+
+}
+
+.fish_filter_nav {
+  width: 100%;
+  height: 7%;
+  /* border: 3px solid green; */
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  overflow-x: hidden;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  padding-left: 20px;
+  margin-bottom: 10px;
+
 }
 
-.product_container {
+.fish_filter_nav_parent {
   margin: auto;
-  /* border: 3px solid black; */
-  overflow-x: hidden;
+  width: 60%;
+  height: 20%;
+  /* border: 3px solid blue; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
 
-  padding: 10px 10px;
-  display: flex;
-  gap: 20px;
-  width: 80%;
-  scroll-snap-type: x mandatory;
-  overscroll-behavior: smooth;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  height: 100%;
-  z-index: -1;
 
 
 }
 
+.fish_filter_nav_parent>div {
+  /* border: 3px solid brown; */
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+
+}
+
+.fish_filter_nav_parent>div>img {
+  width: 30%;
+  height: 95%;
+}
+
+.fish_filter_nav_parent>div>h3 {
+  color: black;
+  font-weight: 600;
+}
+
+.fish_main_parent {
+  width: 100%;
+  height: 80%;
+  /* border: 3px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fish_parent_grid_div {
+
+  width: 80%;
+  height: 80%;
+  /* border: 3px solid black; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto);
+  gap: 20px;
+}
+
+/* .fish_parent_grid_div>div{
+    border: 3px solid brown;
+} */
 .single_div {
   min-width: 32%;
   height: auto;
@@ -56,14 +104,33 @@
   gap: 5px;
   padding: 10px;
   justify-content: left;
+  max-height: 50%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis
 }
 
 .prod_detail>h2 {
   font-weight: 600;
-  font-size: 17px;
+  font-size: 20px;
   color: rgb(24, 21, 21);
 
 }
+
+/* link  link  link link */
+.link:hover {
+  text-decoration: none !important;
+  color: black;
+}
+
+.link>h2 {
+  font-weight: 600;
+  font-size: 20px;
+  color: rgb(24, 21, 21);
+
+}
+
+/* link  link  link link */
 
 .prod_detail>p {
   color: gray;
@@ -72,7 +139,7 @@
 }
 
 .prod_price_btn_div {
-
+  text-decoration: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -82,6 +149,7 @@
 .prod_price_btn_div>h1 {
   color: #D11243;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .prod_price_btn_div>button {
@@ -89,6 +157,7 @@
   color: white;
   padding: 10px;
   border-radius: 5px;
+
 }
 
 .prv_btn,

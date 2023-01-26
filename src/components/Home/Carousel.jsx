@@ -9,15 +9,15 @@ export default function ControlledCarousel() {
     setIndex(selectedIndex);
   };
 
-  return ( <div className={style.Carouselcontainer}>
+  return (<div className={style.Carouselcontainer}>
     <Carousel activeIndex={index} onSelect={handleSelect} >
-      <Carousel.Item  className={style.big_img_container} >
+      <Carousel.Item className={style.big_img_container} >
         <img
           className="d-block w-100"
           src="https://d2407na1z3fc0t.cloudfront.net/Slider/banner_62e142fbed5a8"
           alt="First slide"
         />
-        
+
       </Carousel.Item>
       <Carousel.Item >
         <img
@@ -25,13 +25,11 @@ export default function ControlledCarousel() {
           src="https://d2407na1z3fc0t.cloudfront.net/Slider/banner_63630e9d6ba0e"
           alt="Second slide"
         />
+     </Carousel.Item>
 
-       
-      </Carousel.Item>
-    
 
     </Carousel>
-   </div>
+  </div>
   );
 }
 

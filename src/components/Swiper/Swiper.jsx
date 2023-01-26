@@ -14,7 +14,7 @@ import { useSelector } from 'react-redux';
 // install Virtual module
 SwiperCore.use([Virtual, Navigation, Pagination]);
 
-export default function SwiperFunc({ foodData  ,handleQuantityIncreament, handleQuantityDecreament, handlePost }) {
+export default function SwiperFunc({ foodData, handleQuantityIncreament, handleQuantityDecreament, handlePost }) {
     const [swiperRef, setSwiperRef] = useState(null);
     const appendNumber = useRef(9);
     const prependNumber = useRef(1);
@@ -57,17 +57,13 @@ export default function SwiperFunc({ foodData  ,handleQuantityIncreament, handle
 
     return (
         <>
-            <Swiper 
+            <Swiper
                 onSwiper={setSwiperRef}
                 slidesPerView={3}
-                // centeredSlides={true}
                 spaceBetween={15}
-                // pagination={{
-                //   type: 'fraction',
-                // }}
                 navigation={true}
                 virtual
-                
+
             >
                 {foodData.length > 0 && foodData.map((el, index) => (
                     <SwiperSlide key={el.index} virtualIndex={index}>
@@ -83,10 +79,10 @@ export default function SwiperFunc({ foodData  ,handleQuantityIncreament, handle
                         </Link>
                         <div className='prod_price_btn_div'>
                             <h1>{el.price_tag}{el.cuurency}{el.price}</h1>
-                            
+
                             {cartData.length > 0 && cartData.find(({ id }) => id === el.id) !== undefined ?
-                                        <div className="add_remove_btn_div"><button onClick={() => handleQuantityDecreament(el.id)}>-</button><h1>{checkQuantity(el)}</h1><button onClick={() => handleQuantityIncreament(el.id)}>+</button></div>
-                                        : <button onClick={() => handlePost(el)}>ADD TO CART</button>}
+                                <div className="add_remove_btn_div"><button onClick={() => handleQuantityDecreament(el.id)}>-</button><h1>{checkQuantity(el)}</h1><button onClick={() => handleQuantityIncreament(el.id)}>+</button></div>
+                                : <button onClick={() => handlePost(el)}>ADD TO CART</button>}
                         </div>
                     </SwiperSlide>
                 ))}

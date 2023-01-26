@@ -1,9 +1,7 @@
 .home_container {
   margin: auto;
-  /* margin-top: 100px; */
   width: 100%;
   height: auto;
-  /* border: 1px solid red; */
   gap: 20px;
   background-color: #F7F6F6;
 
@@ -13,10 +11,6 @@
 .big_bottom_img_div {
   margin: auto;
   width: 100%;
-  /* max-height:20%;
-  min-height:20%; */
-
-
   object-fit: fill;
 
 }

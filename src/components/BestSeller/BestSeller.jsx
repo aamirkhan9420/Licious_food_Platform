@@ -2,7 +2,7 @@ import { Spinner } from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getData } from '../../redux/AppReducer/action'
-import SwiperFunc from '../../Swiper/Swiper'
+import SwiperFunc from '../Swiper/Swiper'
 
 import Storage from '../storage/Storage'
 import "./BestSeller.css"

@@ -1,8 +1,4 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
-import SwiperFunc from '../../Swiper/Swiper'
-
-
 import BestSeller from '../BestSeller/BestSeller'
 import BreakfastSnacking from '../BreakfastSnacking/BreakfastSnacking'
 import Category from '../categories/Category'

@@ -1,16 +1,13 @@
-import { Select, SelectField } from '@chakra-ui/react'
 import React from 'react'
-import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import AuthContext from '../../AuthContext/AuthContext'
-import Chicken from '../../Chicken/Chicken'
-import Mutton from '../../Mutton/Mutton'
-import Prawn from '../../prawn/Prawn'
-
-import ReadyCook from '../../ReadyCook/ReadyCook'
+import Chicken from '../Chicken/Chicken'
+import Mutton from '../Mutton/Mutton'
+import Prawn from '../prawn/Prawn'
+import ReadyCook from '../ReadyCook/ReadyCook'
 import SearchHome from '../../Search/SearchHome'
-import SinglePage from '../../Singlepage/SinglePage'
-import Spread from '../../Spread/Spread'
+import SinglePage from '../Singlepage/SinglePage'
+import Spread from '../Spread/Spread'
 import Fish from '../Fish/Fish'
 import Home from '../Home/Home'
 import PageNotFound from '../PageNotFound/PageNotFound'
@@ -35,20 +32,13 @@ export default function AllRoutes({ text, handleQuantityIncreament, handleQuanti
         <Route path="/Prawn" element={<Prawn handleQuantityIncreament={handleQuantityIncreament} handleQuantityDecreament={handleQuantityDecreament} handlePost={handlePost} />} />
         <Route path="/SinglePage" element={<SinglePage handleQuantityIncreament={handleQuantityIncreament} handleQuantityDecreament={handleQuantityDecreament} handlePost={handlePost} />} />
         <Route path="/Myorder" element={<MyOrder />} />
-       
-        
         <Route path='*' element={<PageNotFound />} />
         <Route path="/paymentpage" element={<AuthContext> <PaymentPage /> </AuthContext>} />
         <Route path="/payment" 
         element={ <Payment />} />
-        
-        
-
-
-
         <Route path="/SearchHome" element={<SearchHome text={text} handleQuantityIncreament={handleQuantityIncreament} handleQuantityDecreament={handleQuantityDecreament} handlePost={handlePost} />} />
-
       </Routes>
+    
     </div>
   )
 }

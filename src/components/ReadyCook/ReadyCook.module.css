@@ -1,36 +1,42 @@
-.carousel {
-  position: relative;
-  overflow-x: hidden;
-  /* padding: 26px; */
+.fish_container {
   width: 100%;
-  /* border: 3px solid yellow; */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: 10px; */
+  background-color: #F7F6F6;
+  padding: 20px;
+}
+
+.fish_filter_nav {
+  width: 100%;
+  height: 10%;
+}
+
+.fish_main_parent {
+  width: 100%;
   height: 80%;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
-  overflow-x: hidden;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
-.product_container {
-  margin: auto;
-  /* border: 3px solid black; */
-  overflow-x: hidden;
+.fish_parent_grid_div {
 
-  padding: 10px 10px;
-  display: flex;
-  gap: 20px;
   width: 80%;
-  scroll-snap-type: x mandatory;
-  overscroll-behavior: smooth;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  height: 100%;
-  z-index: -1;
-
-
+  height: 80%;
+  /* border: 3px solid black; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto);
+  gap: 20px;
 }
 
+/* .fish_parent_grid_div>div{
+  /* border: 3px solid brown; */
+/* }  */
 .single_div {
   min-width: 32%;
   height: auto;
@@ -56,14 +62,33 @@
   gap: 5px;
   padding: 10px;
   justify-content: left;
+  max-height: 50%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis
 }
 
 .prod_detail>h2 {
   font-weight: 600;
-  font-size: 17px;
+  font-size: 20px;
   color: rgb(24, 21, 21);
 
 }
+
+/* link  link  link link */
+.link:hover {
+  text-decoration: none !important;
+  color: black;
+}
+
+.link>h2 {
+  font-weight: 600;
+  font-size: 20px;
+  color: rgb(24, 21, 21);
+
+}
+
+/* link  link  link link */
 
 .prod_detail>p {
   color: gray;
@@ -72,7 +97,7 @@
 }
 
 .prod_price_btn_div {
-
+  text-decoration: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -82,6 +107,7 @@
 .prod_price_btn_div>h1 {
   color: #D11243;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .prod_price_btn_div>button {
@@ -89,6 +115,7 @@
   color: white;
   padding: 10px;
   border-radius: 5px;
+
 }
 
 .prv_btn,
@@ -162,3 +189,7 @@
 }
 
 /* .add_remove_btn_div .add_remove_btn_div. END add_remove_btn_div .add_remove_btn_div */
+.prod_price_btn_div>h1 {
+  color: #D11243;
+  font-weight: 600;
+}
