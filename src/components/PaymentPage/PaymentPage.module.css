@@ -1,20 +1,21 @@
 .form_container{
     margin:auto;
     margin-top:0px;
-    height:750px;
+    height:700px;
     width: 100%;
     /* border: 5px solid blue; */
-    padding: 50px;
+    padding: 35px;
 
 }
 .from_parent{
     margin:auto;
     
-    height: 100%;
-    width: 35%;
+    /* height: 100%; */
+    width: 30%;
     /* border: 1px solid red;  */
     padding: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.30) 0px 0px 3px;
+    border-radius: 10px;
 }
 form{
     display: flex;
@@ -28,7 +29,8 @@ form{
     width: 100%;
     padding: 25px;
     font-size: 20px !important;
-
+   color: white;
+   font-weight: 700;
 
 }
 .spn{

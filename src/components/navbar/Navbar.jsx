@@ -6,7 +6,7 @@ import style from "./Navbar.module.css"
 import { GoLocation } from "react-icons/go";
 import { AiOutlineAppstore } from "react-icons/ai";
 import MobileNumbeEnterSlider from '../Login/MobileNumbeEnterSlider'
-import Search from '../../Search/Search'
+import Search from '../Search/Search'
 import { useState } from 'react'
 import AddToCart from '../AddToCart/AddToCart'
 export default function Navbar({ handlePost, handleBillforIncreament, setText, locationstate, subtotal, deliverycharge, discount, totalBill, cuurency, handleDeletecard, handleQuantityIncreament, handleQuantityDecreament }) {

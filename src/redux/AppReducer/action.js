@@ -6,7 +6,6 @@ const getData = (dispatch) => {
     dispatch({ type: GET_BESTSELLER_REQUEST })
     return axios.get("https://food-data.onrender.com/api/bestSeller")
         .then((res) => {
-            console.log(res)
             return dispatch({ type: GET_BESTSELLER_SUCCESS, payload: res.data })
         })
         .catch((e) => {

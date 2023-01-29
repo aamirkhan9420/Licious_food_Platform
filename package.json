@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chakra-ui/accordion": "^2.1.8",
     "@chakra-ui/icons": "^2.0.10",
     "@chakra-ui/react": "^2.3.4",
     "@emotion/react": "^11.10.4",
@@ -22,7 +23,6 @@
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
-    "react-modal-hover": "^1.1.13",
     "react-pay-icons": "^3.0.0",
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.1",

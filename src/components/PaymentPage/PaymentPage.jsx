@@ -9,8 +9,6 @@ export default function PaymentPage() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   let navigate = useNavigate()
   let location = useLocation()
-  // let  loca=location.state.locality
-
   let [loc, setLocation] = useState()
   let [flat, setFlat] = useState()
   let [landMark, setLandMark] = useState()
@@ -21,9 +19,19 @@ export default function PaymentPage() {
   let [adress, setAdrres] = useState()
   let dispatch = useDispatch()
   const toast = useToast()
+  console.log(location.state)
   let handleForm = (e) => {
     e.preventDefault()
-    if (mobile.length < 10 || mobile > 10) {
+  
+   if (loc && flat  && city && email && mobile && fullname) {
+   
+      if (mobile.length === 10) {
+      
+      let arr = [loc, flat, landMark, city, email, mobile, fullname]
+      setAdrres(arr)
+      onOpen()
+    }
+     else{
       toast({
         title: 'Mobile number should be 10 digits',
         status: 'warning',
@@ -31,12 +39,7 @@ export default function PaymentPage() {
         isClosable: true,
         position: "top"
       })
-      // return
-    }
-    if (loc && flat && landMark && city && email && mobile && fullname) {
-      let arr = [loc, flat, landMark, city, email, mobile, fullname]
-      setAdrres(arr)
-      onOpen()
+     }
     } else {
       toast({
         title: 'All fields are mandatory',
@@ -50,7 +53,7 @@ export default function PaymentPage() {
   }
   const hadleuserpfile = () => {
 
-    useprofilefunc(dispatch, adress)
+    // useprofilefunc(dispatch, adress)
     onClose()
     toast({
       title: 'User details added',
@@ -92,7 +95,7 @@ export default function PaymentPage() {
             <FormLabel>Enter Full name</FormLabel>
             <Input type='text' value={fullname} onChange={(e) => setFullName(e.target.value)} />
 
-            <Button type='submit' className={style.btn}  >Save & Proceed </Button >
+            <Button type='submit' className={style.btn} bg="teal.200"  >Save & Proceed </Button >
           </FormControl>
         </form>
       </div>
@@ -133,7 +136,7 @@ export default function PaymentPage() {
 
             <ModalFooter>
               <Button colorScheme='blue' mr={3} onClick={onClose}>
-                Close
+                Cancel
               </Button>
               <Button className={style.confbtn} onClick={() => hadleuserpfile()}>Confirm user details & proceed to pay</Button>
             </ModalFooter>

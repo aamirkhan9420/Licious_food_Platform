@@ -66,7 +66,7 @@ export default function SwiperFunc({ foodData, handleQuantityIncreament, handleQ
 
             >
                 {foodData.length > 0 && foodData.map((el, index) => (
-                    <SwiperSlide key={el.index} virtualIndex={index}>
+                    <SwiperSlide key={index} virtualIndex={index}>
                         <Link to={"/SinglePage"} state={el} className="link">
                             <img src={el.imgUrl} alt="" />
                         </Link>

@@ -20,7 +20,6 @@ export default function Parent({ props }) {
     let [filterd, setFilterd] = useState(foodData || [])
 
     let filterAll = () => {
-        console.log("hello1")
 
         setFilterd(foodData)
 
@@ -38,7 +37,6 @@ export default function Parent({ props }) {
 
     }
     let filterBySea = () => {
-        console.log("hello2")
         let arr = []
         let filterData = foodData.filter((el) => {
             if ((el.des.includes(fill2))) {
@@ -48,7 +46,6 @@ export default function Parent({ props }) {
         setFilterd(arr)
     }
     let filterByReadyCook = () => {
-        console.log("hello3")
         let arr = []
         let filterData = foodData.filter((el) => {
             if ((el.name.includes(fill3))) {
@@ -59,7 +56,6 @@ export default function Parent({ props }) {
     }
     /*Filter end  filter end filter end filter end filter end fiter end*/
 
-    console.log(cartData)
     let dispatch = useDispatch()
     const handleGetCart = () => {
         cartGet(dispatch)
@@ -101,9 +97,9 @@ export default function Parent({ props }) {
 
             <div className={style.fish_main_parent}>
                 <div className={style.fish_parent_grid_div}>
-                    {foodData.length > 0 && filterd.map((el) => (
+                    {foodData.length > 0 && filterd.map((el,index) => (
 
-                        <div key={el.index} className={style.single_div}>
+                        <div key={index} className={style.single_div}>
                             <Link to={"/SinglePage"} state={el} className={style.link}>
                                 <img src={el.imgUrl} alt="fish" />
                             </Link>

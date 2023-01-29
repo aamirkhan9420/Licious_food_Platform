@@ -1,7 +1,9 @@
-import React from 'react'
+
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
+
+
 import style from './MyOrder.module.css'
 export default function MyOrder() {
 
@@ -9,8 +11,10 @@ export default function MyOrder() {
         return state.AppReducer.cartData
     })
     let location = useLocation()
-    console.log(location.state)
+    // console.log(location.state)
+    console.log(cartData)
     useEffect(() => {
+        cartData=cartData.splice(1,cartData.length-1)
 
     }, [cartData.length])
     return (
@@ -21,9 +25,9 @@ export default function MyOrder() {
             <div className={style.fish_main_parent}>
                 <div className={style.fish_main_parent}>
                     <div className={style.fish_parent_grid_div}>
-                        {cartData.length > 0 && cartData.map((el) => (
-                            <div key={el.index} className={style.single_div}>
-                                <img src={el.imgUrl} alt="fish" />
+                        {cartData.length >0 && cartData.map((el,index) => (
+                            <div key={index} className={style.single_div}>
+                                <img src={el.imgUrl} alt="" />
                                 <div className={style.prod_detail}>
                                     <h2>{el.name}</h2>
                                     <p>{el.des}</p>

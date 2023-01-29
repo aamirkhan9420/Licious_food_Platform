@@ -10,7 +10,6 @@ let signUpFun = (payload) => {
 const getuserdata = (dispatch) => {
   dispatch({ type: GETSIGNUP_REQUEST })
   return axios.get("https://food-data.onrender.com/api/signupdata").then((res) => {
-    console.log(res.data)
     dispatch({ type: GETSIGNUP_SUCCESS, payload: res.data })
   }).catch((e) => {
     dispatch({ type: GETSIGNUP_FAILURE, payload: e })
@@ -21,7 +20,6 @@ const getuserdata = (dispatch) => {
 
 const deletUser = (id) => {
   return axios.delete(`https://food-data.onrender.com/api/signupdata/${id}`).then((res) => {
-    console.log(res.data)
 
   }).catch((e) => {
     console.log(e)

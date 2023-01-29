@@ -24,7 +24,7 @@ export default function Payment() {
   const [totalAmount, setTotalAmount] = useState(0)
   const [isLoading, setLoading] = useState(false)
   const toast = useToast()
-  const OptSent = () => {
+  const otpSent = () => {
     setLoading(true)
     setTimeout(() => {
       setotp(true)
@@ -63,7 +63,7 @@ export default function Payment() {
         {!otp && <Stack spacing={8}>
           <FormControl isRequired>
             <FormLabel>Debit/Credit card Number</FormLabel>
-            <Input isRequired type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="16" placeholder='xxxx xxxx xxxx xxxx' />
+            <Input required type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="16" minLength="16" placeholder='xxxx xxxx xxxx xxxx' />
           </FormControl>
 
           <FormControl isRequired>
@@ -97,7 +97,7 @@ export default function Payment() {
 
           </Box>
           <Box >
-            <Button isLoading={isLoading} onClick={OptSent} width="30%" colorScheme="telegram">Send otp</Button>
+            <Button isLoading={isLoading} onClick={otpSent} width="30%" colorScheme="telegram">Send otp</Button>
           </Box>
         </Stack>}
 
@@ -115,7 +115,7 @@ export default function Payment() {
 
             <Button onClick={orderConfirmed} mt="10" width="30%" colorScheme="teal">Confirm Order</Button>
             <br />
-            <Button isLoading={isLoading} onClick={OptSent} mt="10" width="20%" colorScheme="telegram">Resend OTP</Button>
+            <Button isLoading={isLoading} onClick={otpSent} mt="10" width="20%" colorScheme="telegram">Resend OTP</Button>
           </Box>}
 
       </Box>

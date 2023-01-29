@@ -22,7 +22,7 @@ export default function AddToCart({ locality, subtotal, deliverycharge, discount
   let navigator = useNavigate()
   const handleSlider = () => {
     onClose()
-    navigator("/paymentpage", { state: { locality } })
+    navigator("/paymentpage", { state: { locality,cartData } })
   }
 
 

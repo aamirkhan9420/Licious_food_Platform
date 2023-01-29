@@ -15,7 +15,6 @@ export default function BestSeller({handleQuantityIncreament,handleQuantityDecre
   let isLoading=useSelector((state)=>{
     return state.AppReducer.isLoading
   })
-  console.log(foodData)
   let calldata=()=>{
     getData(dispatch)
  

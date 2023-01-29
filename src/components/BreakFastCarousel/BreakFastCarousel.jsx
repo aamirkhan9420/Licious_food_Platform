@@ -1,7 +1,6 @@
 import React from 'react'
 import "./BreakFastCarousel.css"
 export default function BreakFastCarousel({props}) {
-    console.log(props)
     let box =document.querySelector(".product_BreackFast_container")
   
 let btnPressPrv=()=>{

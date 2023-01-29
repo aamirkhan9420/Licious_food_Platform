@@ -15,7 +15,6 @@ export default function ReadyCook({ handleQuantityIncreament, handleQuantityDecr
     let cartData = useSelector((state) => {
         return state.AppReducer.cartData
     })
-    console.log(cartData)
     let dispatch = useDispatch()
     const handleGetCart = () => {
         cartGet(dispatch)
@@ -58,8 +57,8 @@ export default function ReadyCook({ handleQuantityIncreament, handleQuantityDecr
 
             <div className={style.fish_main_parent}>
                 <div className={style.fish_parent_grid_div}>
-                    {foodData.length > 0 && foodData.map((el) => (
-                        <div key={el.index} className={style.single_div}>
+                    {foodData.length > 0 && foodData.map((el,index) => (
+                        <div key={index} className={style.single_div}>
                             <Link to={"/SinglePage"} state={el} className={style.link}>
                                 <img src={el.imgUrl} alt="fish" />
                             </Link>

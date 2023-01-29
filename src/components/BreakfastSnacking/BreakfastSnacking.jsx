@@ -11,7 +11,6 @@ export default function BreakfastSnacking({handleQuantityIncreament,handleQuanti
   let breakFastData=useSelector((state)=>{
     return state.AppReducer.breakFastData
   })
-  console.log(breakFastData)
   let calldata=()=>{
     getDataBreakFast(dispatch)
  
