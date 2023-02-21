@@ -28,8 +28,7 @@ export default function Payment() {
   const [creditName, setCreditName] = useState('');
   const [cardExpiry, setCardExpiry] = useState('');
   const [cardCvv, setCardCvv] = useState('');
-  let [space, setSpace] = useState(1);
-  let [count, setCount] = useState(0)
+
 
 
   let yearnow = new Date().getFullYear()
@@ -98,6 +97,7 @@ export default function Payment() {
     inp.current.addEventListener("input", () => inp.current.value = formatNumber(inp.current.value.replaceAll(" ", "")));
     const formatNumber = (number) => number.split("").reduce((seed, next, index) => {
       if (index !== 0 && !(index % 4)) seed += " ";
+      setCreditCard(seed + next)
       return seed + next;
     }, "");
   }
@@ -131,7 +131,7 @@ export default function Payment() {
         {!otp && <Stack spacing={8}>
           <FormControl isRequired>
             <FormLabel>Debit/Credit card Number</FormLabel>
-            <Input ref={inp} id='credit-card-input' onChange={handleInp} required type="text" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" minLength="16" placeholder='xxxx xxxx xxxx xxxx' />
+            <Input ref={inp} id='credit-card-input' value={creditCard} onChange={handleInp} required type="text" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" minLength="16" placeholder='xxxx xxxx xxxx xxxx' />
           </FormControl>
 
           <FormControl isRequired>
