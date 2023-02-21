@@ -12,7 +12,7 @@ import {
   Heading,
   PinInput, PinInputField, useToast
 } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { Visa, AmazonTransparent, Googlepay, Mastercard, PaypalTransparent } from "react-pay-icons";
 import { useNavigate } from 'react-router-dom';
@@ -23,20 +23,94 @@ export default function Payment() {
   const [otp, setotp] = useState(false)
   const [totalAmount, setTotalAmount] = useState(0)
   const [isLoading, setLoading] = useState(false)
-  const toast = useToast()
+  const toast = useToast();
+  let [creditCard, setCreditCard] = useState('');
+  const [creditName, setCreditName] = useState('');
+  const [cardExpiry, setCardExpiry] = useState('');
+  const [cardCvv, setCardCvv] = useState('');
+  let [space, setSpace] = useState(1);
+  let [count, setCount] = useState(0)
+
+
+  let yearnow = new Date().getFullYear()
+  let monthnow = new Date().getMonth() + 1;
+  monthnow = monthnow.toString()
+  let daynow = new Date().getDate() + 7;
+  daynow = daynow.toString()
+
+  let currdate = `${yearnow}-${monthnow.length === 1 ? 0 + monthnow : monthnow}-${daynow.length === 1 ? 0 + daynow : daynow}`
+
   const otpSent = () => {
-    setLoading(true)
-    setTimeout(() => {
-      setotp(true)
-      setLoading(false)
+
+    if (creditCard && creditName && cardExpiry && cardCvv) {
+
+      creditCard = creditCard.toString();
+
+      if (creditCard.length === 19) {
+
+        if (cardCvv.length === 3) {
+
+          setLoading(true)
+
+          setTimeout(() => {
+            setotp(true)
+            setLoading(false)
+            toast({
+              title: "OTP sent to your mobile",
+              position: "top",
+              isClosable: true,
+              status: "success"
+            })
+          }, 2000);
+
+        } else {
+          toast({
+            title: "Error",
+            description: "CVV number should be 3 digits",
+            position: "top",
+            isClosable: true,
+            status: "error"
+          })
+        }
+
+      } else {
+        toast({
+          title: "Error",
+          description: "Credit Card number should be 16 digits",
+          position: "top",
+          isClosable: true,
+          status: "error"
+        })
+      }
+
+    } else {
       toast({
-        title: "OTP sent to your mobile",
+        title: "Error",
+        description: "All fields are mandatory",
         position: "top",
         isClosable: true,
-        status: "success"
+        status: "error"
       })
-    }, 2000);
+    }
   }
+   let inp=useRef()
+  let handleInp=()=>{
+inp.current.addEventListener("input", () => inp.current.value = formatNumber(inp.current.value.replaceAll(" ", "")));
+ const formatNumber = (number) => number.split("").reduce((seed, next, index) => {
+  if (index !== 0 && !(index % 4)) seed += " ";
+  return seed + next;
+}, "");
+  }
+
+//   let input = document.getElementById("credit-card-input");
+  
+// input.addEventListener("input", () => input.value = formatNumber(input.value.replaceAll(" ", "")));
+
+// const formatNumber = (number) => number.split("").reduce((seed, next, index) => {
+//   if (index !== 0 && !(index % 4)) seed += " ";
+//   return seed + next;
+// }, "");
+
 
   const orderConfirmed = () => {
     toast({
@@ -47,6 +121,7 @@ export default function Payment() {
     })
     navigate("/")
   }
+
   return (
     <Flex direction="column" textAlign="center" alignContent="center" alignItems="center" justifyContent="center" p={"50px"}>
 
@@ -63,26 +138,26 @@ export default function Payment() {
         {!otp && <Stack spacing={8}>
           <FormControl isRequired>
             <FormLabel>Debit/Credit card Number</FormLabel>
-            <Input required type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="16" minLength="16" placeholder='xxxx xxxx xxxx xxxx' />
+            <Input ref={inp} id='credit-card-input' onChange={handleInp}  required type="text" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" minLength="16" placeholder='xxxx xxxx xxxx xxxx' />
           </FormControl>
 
           <FormControl isRequired>
             <FormLabel>Name on Card</FormLabel>
-            <Input type="name" placeholder='xxxxxx xxxxx' />
+            <Input onChange={(e) => setCreditName(e.target.value)} type="name" value={creditName} placeholder='xxxxxx xxxxx' />
           </FormControl>
 
           <Box display="flex" justifyContent="space-between">
 
             <FormControl w="50%" isRequired>
               <FormLabel>Expiry date</FormLabel>
-              <Input type="date" />
+              <Input min={currdate} onChange={(e) => setCardExpiry(e.target.value)} value={cardExpiry} type="date" />
             </FormControl>
 
 
             <FormControl w="30%" id="password" isRequired>
               <FormLabel>CVV</FormLabel>
               <InputGroup>
-                <Input maxlength="3" type={showPassword ? 'text' : 'password'} />
+                <Input onChange={(e) => setCardCvv(e.target.value)} value={cardCvv} maxlength="3" type={showPassword ? 'text' : 'password'} />
                 <InputRightElement h={'full'}>
                   <Button
                     variant={'ghost'}
