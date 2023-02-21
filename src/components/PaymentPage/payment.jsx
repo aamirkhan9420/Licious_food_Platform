@@ -93,23 +93,16 @@ export default function Payment() {
       })
     }
   }
-   let inp=useRef()
-  let handleInp=()=>{
-inp.current.addEventListener("input", () => inp.current.value = formatNumber(inp.current.value.replaceAll(" ", "")));
- const formatNumber = (number) => number.split("").reduce((seed, next, index) => {
-  if (index !== 0 && !(index % 4)) seed += " ";
-  return seed + next;
-}, "");
+  let inp = useRef()
+  let handleInp = () => {
+    inp.current.addEventListener("input", () => inp.current.value = formatNumber(inp.current.value.replaceAll(" ", "")));
+    const formatNumber = (number) => number.split("").reduce((seed, next, index) => {
+      if (index !== 0 && !(index % 4)) seed += " ";
+      return seed + next;
+    }, "");
   }
 
-//   let input = document.getElementById("credit-card-input");
-  
-// input.addEventListener("input", () => input.value = formatNumber(input.value.replaceAll(" ", "")));
 
-// const formatNumber = (number) => number.split("").reduce((seed, next, index) => {
-//   if (index !== 0 && !(index % 4)) seed += " ";
-//   return seed + next;
-// }, "");
 
 
   const orderConfirmed = () => {
@@ -138,7 +131,7 @@ inp.current.addEventListener("input", () => inp.current.value = formatNumber(inp
         {!otp && <Stack spacing={8}>
           <FormControl isRequired>
             <FormLabel>Debit/Credit card Number</FormLabel>
-            <Input ref={inp} id='credit-card-input' onChange={handleInp}  required type="text" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" minLength="16" placeholder='xxxx xxxx xxxx xxxx' />
+            <Input ref={inp} id='credit-card-input' onChange={handleInp} required type="text" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" minLength="16" placeholder='xxxx xxxx xxxx xxxx' />
           </FormControl>
 
           <FormControl isRequired>
